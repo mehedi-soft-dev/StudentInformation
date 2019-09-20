@@ -72,9 +72,17 @@ namespace StudentInformation
                 for (int index = 0; index < ids.Count; index++)
                 {
                     if (gpaPoints[index] > maxGpa)
+                    {
+                        maxGpa = gpaPoints[index];
                         maxGpaIndex = index;
-                    if(gpaPoints[index] < minGpa) 
+                    }
+                        
+                    if(gpaPoints[index] < minGpa)
+                    {
+                        minGpa = gpaPoints[index];
                         minGpaIndex = index;
+                    }
+                        
 
                     totalGpa += gpaPoints[index];
                     
@@ -83,13 +91,13 @@ namespace StudentInformation
                 Reset();
                 ShowStudent(0, names.Count);
 
-                maxGpaTextBox.Text = Convert.ToString(gpaPoints[maxGpaIndex]);
+                maxGpaTextBox.Text = String.Format("{0:0.00}", gpaPoints[maxGpaIndex]);
                 maxGpaNameTextBox.Text = names[maxGpaIndex];
-                minGpaTextBox.Text = Convert.ToString(gpaPoints[minGpaIndex]);
+                minGpaTextBox.Text = String.Format("{0:0.00}", gpaPoints[minGpaIndex]);
                 minGpaNameTextBox.Text = names[minGpaIndex];
 
                 averageGpaTextBox.Text = String.Format("{0:0.00}", totalGpa/ids.Count);
-                totalGpaTextBox.Text = Convert.ToString(totalGpa);
+                totalGpaTextBox.Text = String.Format("{0:0.00}", totalGpa);
             }
             catch(Exception exception)
             {
@@ -163,7 +171,7 @@ namespace StudentInformation
             ageTextBox.Text = "";
             addressTextBox.Text = "";
             gpaPointTextBox.Text = "";
-            searchTextBox.Text = "";
+            //searchTextBox.Text = "";
             maxGpaTextBox.Text = "";
             maxGpaNameTextBox.Text = "";
             minGpaTextBox.Text = "";
