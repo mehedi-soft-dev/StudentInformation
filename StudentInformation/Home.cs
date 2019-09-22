@@ -69,7 +69,7 @@ namespace StudentInformation
 
             try
             {
-                for (int index = 0; index < ids.Count; index++)
+                for (int index = 1; index < ids.Count; index++)
                 {
                     if (gpaPoints[index] > maxGpa)
                     {
@@ -196,7 +196,7 @@ namespace StudentInformation
 
         private int SearchByName(string searchKeyword)
         {
-            int index = 0;
+            int index;
             for (index = 0; index < ids.Count; index++)
             {
                 if (names[index] == searchKeyword)
@@ -208,7 +208,7 @@ namespace StudentInformation
 
         private int SearchByMobile(string searchKeyword)
         {
-            int index = 0;
+            int index;
             for (index = 0; index < ids.Count; index++)
             {
                 if (mobiles[index] == searchKeyword)
